@@ -1,0 +1,10 @@
+SELECT 
+(
+SELECT R1.when, R1.phone, R2.name
+FROM R1 INNER JOIN R2
+ON R1.phone = R2.phone
+WHERE R2.name=[Фамилия:]  AND R1.when=[Дата:]
+)
+FROM R1 INNER JOIN 
+SELECT SUM(R1.price) AS SumPrice
+FROM R1 WHERE R1.phone = R2.phone
